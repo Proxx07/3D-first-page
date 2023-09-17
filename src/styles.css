@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@500;900&display=swap');
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.logo img {
+  max-width: 150px;
+  transform-origin: center;
+  transition: ease-out 0.3s;
+  transform:  translateY(calc(var(--x) * 2px))
+              translateX(calc(var(--y) * -2px));
+}
+
+.site-wrapper {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #000;
+  color: #fff;
+  position: relative;
+  font-family: 'Poppins', sans-serif;
+}
+
+.layers {
+  perspective: 1000px;
+  overflow: hidden;
+}
+
+.layers__container {
+  height: 100vh;
+  transform-style: preserve-3d;
+  transition: ease-out 0.2s;
+  transform: rotateX(calc(var(--x) * 1deg)) rotateY(calc(var(--y) * 1deg));
+
+}
+
+.layers__item {
+  position: absolute;
+  background-size: cover;
+  background-position: 50%;
+  inset: 0;
+}
+.layers__item.logo {
+  transform: translateZ(50px);
+  text-align: center;
+  top: 10%;
+}
+.layers__item.layer-1 {
+  background-image: url('../static/layer-1alt.jpg');
+  transform: translateZ(0);
+  inset: -10vw;
+}
+
+.layers__item.layer-2 {
+  background-image: url('../static/leafs-1.png');
+  background-size: auto 900px;
+  background-repeat: no-repeat;
+  background-position: right;
+  transition: ease-out 0.8s;
+  transform:  translateZ(150px) 
+              translateY(calc(var(--x) * 10px))
+              translateX(calc(var(--y) * -10px))
+              rotateX(calc(var(--x) * -1.2deg))
+              rotateY(calc(var(--y) * 0.6deg));
+}
+
+.layers__item.layer-3 {
+  transform: translateZ(200px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.layers__item.layer-4 {
+  transform: translateZ(300px);
+}
+
+.layers__item.layer-5 {
+  transition: ease-out 0.5s;
+  transform:  translateZ(400px)
+              translateY(calc(var(--x) * -10px))
+              translateX(calc(var(--y) * 5px))
+              rotateX(calc(var(--x) * 1deg))
+              rotateY(calc(var(--y) * -0.4deg));
+  background-size: 450px auto;
+  background-repeat: no-repeat;
+  background-position: left 30% bottom 10%;
+  background-image: url('../static/leafs-2.png');
+}
+
+.hero h1 {
+  font-size: 7vw;
+  max-width: 50vw;
+  text-align: center;
+  line-height: 1;
+}
+
+
+.hero__description {
+  text-align: center;
+  text-transform: uppercase;
+  padding-top: 1vw;
+  font-size: 2vw;
+}
